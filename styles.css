@@ -1,0 +1,95 @@
+
+/* 1) Reset básico */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; line-height: 1.5; }
+
+/* 2) Layout */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 12px 16px;
+}
+
+.nav { display: flex; gap: 12px; justify-content: center; }
+.nav a { text-decoration: none; color: #111; font-weight: 600; }
+.nav a:hover { text-decoration: underline; }
+
+main { max-width: 980px; margin: 0 auto; padding: 24px 16px; }
+
+.hero { padding: 32px 0; }
+.hero h1 { font-size: 40px; margin: 0 0 8px; }
+.hero p { margin: 0 0 16px; color: #444; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #111;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.9; }
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+/* 3) Form */
+form { display: grid; gap: 12px; max-width: 520px; }
+label { display: grid; gap: 6px; font-weight: 600; }
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font: inherit;
+}
+.site-footer { padding: 16px; text-align: center; color: #666; border-top: 1px solid #eee; }
+
+/* 4) Tipografía */
+
+p {
+    color: #202020;
+    font-family: "Lilex", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+H1 {
+    color: #202020;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+H2 {
+    color: #202020;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+H3 {
+    color: #202020;
+    font-family: "Lilex", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+H4, H4, H6 {
+    color: #202020;
+    font-family: "Lilex", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nombre Apellido | Perfil profesional</title>
+    <meta name="description" content="Sitio profesional de Nombre Apellido: rol, experiencia, proyectos y contacto." />
+<!-- Estilos -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Librerías Internas -->
+    <script src="script.js" defer></script>
+<!-- Librerías Externas -->
+
+</head>
+
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <h1>Nombre Apellido</h1>
+        <p>Rol / Especialidad / Enfoque (1 línea).</p>
+        <a class="btn" href="#contacto">Contactar</a>
+      </section>
+
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Breve resumen profesional.</p>
+      </section>
+
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <article class="card">
+          <h3>Proyecto 1</h3>
+          <p>Qué hiciste, con qué y qué impacto tuvo.</p>
+          <a href="#" target="_blank" rel="noopener">Ver</a>
+        </article>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+          <label>
+            Nombre
+            <input name="name" type="text" required />
+          </label>
+
+          <label>
+            Correo
+            <input name="email" type="email" required />
+          </label>
+
+          <label>
+            Mensaje
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+
+        <p id="form-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© <span id="year"></span> Nombre Apellido</small>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
