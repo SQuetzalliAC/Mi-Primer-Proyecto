@@ -1,95 +1,85 @@
+/* =========================
+   CSS BASE (para empezar)
+   ========================= */
 
-/* 1) Reset básico */
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, Arial, sans-serif; line-height: 1.5; }
-
-/* 2) Layout */
-.site-header {
-  position: sticky;
-  top: 0;
-  background: white;
-  border-bottom: 1px solid #eee;
-  padding: 12px 16px;
+/* 1) Tokens (variables): cambias aquí y se refleja en todo */
+:root{
+  --ink:#0f172a;
+  --muted:#475569;
+  --bg:#ffffff;
+  --paper:#f8fafc;
+  --border:#e2e8f0;
+  --accent:#2EC4B6;     /* Verde agua vivo */
+  --accent-2:#1E5B4F;   /* Verde iris profundo */
+  --radius:18px;
+  --container: 980px;
 }
 
-.nav { display: flex; gap: 12px; justify-content: center; }
-.nav a { text-decoration: none; color: #111; font-weight: 600; }
-.nav a:hover { text-decoration: underline; }
-
-main { max-width: 980px; margin: 0 auto; padding: 24px 16px; }
-
-.hero { padding: 32px 0; }
-.hero h1 { font-size: 40px; margin: 0 0 8px; }
-.hero p { margin: 0 0 16px; color: #444; }
-
-.btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid #111;
-  background: #111;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-.btn:hover { opacity: 0.9; }
-
-.card {
-  border: 1px solid #eee;
-  border-radius: 14px;
-  padding: 16px;
-  margin: 12px 0;
+/* 2) Reset básico y box sizing */
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Inter, Manrope, Space Grotesk, Questrial, sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
 }
 
-/* 3) Form */
-form { display: grid; gap: 12px; max-width: 520px; }
-label { display: grid; gap: 6px; font-weight: 600; }
-input, textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font: inherit;
-}
-.site-footer { padding: 16px; text-align: center; color: #666; border-top: 1px solid #eee; }
+/* 3) Tipografía: espaciado y jerarquía mínima */
+h1, h2, h3{ line-height:1.15; margin: 0 0 10px; }
+p{ margin: 0 0 14px; color: var(--muted); }
 
-/* 4) Tipografía */
-
-p {
-    color: #202020;
-    font-family: "Lilex", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+/* 4) Contenedor: centra el contenido y da padding lateral */
+.container{
+  width:min(var(--container), 92vw);
+  margin:0 auto;
+  padding:24px 0;
 }
 
-H1 {
-    color: #202020;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
+/* 5) Layout simple (para que el sitio se sienta ordenado) */
+header, main, aside, footer{
+  width:min(var(--container), 92vw);
+  margin:0 auto;
 }
 
-H2 {
-    color: #202020;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
+header{
+  padding:18px 0;
 }
 
-H3 {
-    color: #202020;
-    font-family: "Lilex", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+/* 6) Navegación básica */
+nav a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:700;
+  margin-right:12px;
+}
+nav a:hover{
+  text-decoration:underline;
 }
 
-H4, H4, H6 {
-    color: #202020;
-    font-family: "Lilex", monospace;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+/* 7) Secciones con aire */
+section{
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin: 16px auto;
+  width:min(var(--container), 92vw);
+}
+
+/* 8) Footer */
+footer{
+  padding: 18px 0 28px;
+  color: var(--muted);
+}
+
+/* 9) Responsive rápido */
+@media (max-width: 720px){
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  section{ padding: 14px; }
 }
