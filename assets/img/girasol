@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Girasol abstracto Quetz">
+  <defs>
+    <!-- centro girasol -->
+    <radialGradient id="sunCore" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F2C94C"/>
+      <stop offset="100%" stop-color="#E6B84E"/>
+    </radialGradient>
+
+    <!-- pétalos -->
+    <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2EC4B6"/>
+      <stop offset="100%" stop-color="#1E5B4F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- pétalos radiales -->
+  <g transform="translate(120 120)">
+    <!-- 12 pétalos -->
+    <g id="petalGroup">
+      <path d="M0 -88 C8 -70 8 -50 0 -38 C-8 -50 -8 -70 0 -88Z" fill="url(#petal)"/>
+    </g>
+
+    <use href="#petalGroup" transform="rotate(30)"/>
+    <use href="#petalGroup" transform="rotate(60)"/>
+    <use href="#petalGroup" transform="rotate(90)"/>
+    <use href="#petalGroup" transform="rotate(120)"/>
+    <use href="#petalGroup" transform="rotate(150)"/>
+    <use href="#petalGroup" transform="rotate(180)"/>
+    <use href="#petalGroup" transform="rotate(210)"/>
+    <use href="#petalGroup" transform="rotate(240)"/>
+    <use href="#petalGroup" transform="rotate(270)"/>
+    <use href="#petalGroup" transform="rotate(300)"/>
+    <use href="#petalGroup" transform="rotate(330)"/>
+  </g>
+
+  <!-- centro -->
+  <circle cx="120" cy="120" r="38" fill="url(#sunCore)"/>
+  <circle cx="120" cy="120" r="22" fill="#1F2328" opacity="0.15"/>
+</svg>

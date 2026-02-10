@@ -1,64 +1,137 @@
+      <!--050126 Ajuste de html con el nuevo archivo | 0701 Viendo los videos, empiezo a estructurar de otra manera el html asi como el css-->
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mi sitio profesional</title>
-
-  <!-- META DATOS SEO -->
+      <!--0501 Metadatos básicos SEO-->
+<head>               
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quetzalli | Enfermería, información y tecnología en salud</title>
   <meta name="description" content="Perfil de enfermería que trabaja con información en salud y se forma en el uso de la tecnología para expresarla en entornos digitales y administrativos.
 ">
-
-  <!-- CSS -->
+          <!-- 0501 CSS / Estilos generales y ruta para index.css -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/index.css" />
 
-  <!-- Tipografias -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+          <!-- 0501 Tipografias (Space Grotesk, Manrope y Questrial) tomada la ruta desde google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Questrial&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Questrial&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
 
-  </head>
+<body>
+          <!--0501 Header tendra dos secciones Top y Nav / 0701 se ajusta a div -->
+  <header>
+    <div class="header-top">
+      <svg class="sunflower" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Girasol abstracto Quetz">
+        <defs>
+          <radialGradient id="sunCore" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#F2C94C"/>
+            <stop offset="100%" stop-color="#E6B84E"/>
+          </radialGradient>
 
-  <body>
-    <header>
-      <h1>Shai Quetzalli Angeles Cañas</h1>
-      <h2> Enfermería, información y tecnología en salud </h2>
+          <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2EC4B6"/>
+            <stop offset="100%" stop-color="#1E5B4F"/>
+          </linearGradient>
+        </defs>
+
+        <g transform="translate(120 120)">
+          <g id="petalGroup">
+            <path d="M0 -88 C8 -70 8 -50 0 -38 C-8 -50 -8 -70 0 -88Z" fill="url(#petal)"/>
+          </g>
+          <use href="#petalGroup" transform="rotate(30)"/>
+          <use href="#petalGroup" transform="rotate(60)"/>
+          <use href="#petalGroup" transform="rotate(120)"/>
+          <use href="#petalGroup" transform="rotate(150)"/>
+          <use href="#petalGroup" transform="rotate(180)"/>
+          <use href="#petalGroup" transform="rotate(210)"/>
+          <use href="#petalGroup" transform="rotate(240)"/>
+          <use href="#petalGroup" transform="rotate(270)"/>
+          <use href="#petalGroup" transform="rotate(300)"/>
+          <use href="#petalGroup" transform="rotate(330)"/>
+        </g>
+        <circle cx="120" cy="120" r="38" fill="url(#sunCore)"/>
+        <circle cx="120" cy="120" r="22" fill="#1F2328" opacity="0.15"/>
+      </svg>
+
+    <div class="identity">
+      <p class="name">Shai Quetzalli Ángeles Cañas</p>
+      <p class="role">Enfermería, información y tecnología en salud</p>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn btn--primary">Contactarme</button>
+    </div>
+    </div>
+
+    <div class="header-nav">
       <nav>
         <a href="#inicio">Inicio</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#proyectos">Proyectos</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#blog">Blog</a>
         <a href="#contacto">Contacto</a>
         <a href="#pruebas">Pruebas</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section id="inicio">
-        <h3>Hola 👋</h3>
-        <p>Bienvenida/o a mi primer sitio profesional.</p>
-        <p>Este sitio está en construcción, pero pronto estaré listo para mostrar mis proyectos y experiencia.</p>
-      </section>
+          <!--0601 Hero, apartado donde se mostrara la presentación del sitio. Aqui, aprendi como ingresar una imagen. la del hero es en .png -->
+  <main>
+    <section class="hero-content">
+      <h1>Quetzalli</h1>
+      <h2>Enfermería, información y tecnología en salud</h2>
+      <p>Este sitio está en construcción, pero pronto estaré listo para mostrar mis proyectos y experiencia.</p>
+      <img src="assets/img/FotoPrueba.jpg" alt="Imagen representativa del sitio">
+    </section>
 
-      <section id=""sobre-mi">
-        <h4>Sobre mí</h4>
-        <p>Sitio profesional de Quetzalli. Perfil de enfermería que trabaja con información en salud y se forma en el uso de la tecnología para expresarla en entornos digitales y administrativos. </p>
-      </section>
-      
-      <section id="pruebas">
-        <h5>Sección de pruebas</h5>
-        <p> lorem ipsun </p>
-      </section>
-      
-    </main>
+    <section id="inicio">
+      <h3>Hola 👋</h3>
+      <p>Bienvenida/o a mi primer sitio profesional.</p>
+      <p>Este sitio está en construcción, pero pronto estaré listo para mostrar mis proyectos y experiencias.</p>
+    </section>
 
-    <aside> <p> Página en proceso </p> </aside>
+    <section id="sobre-mi">
+      <h3>Sobre mí</h3>
+      <p>Sitio profesional de Quetzalli. Perfil de enfermería que trabaja con información en salud y se forma en el uso de la tecnología para expresarla en entornos digitales y administrativos. Trabajo de la mano de JCDLCE quien me asesora y acompaña en este proceso.  </p>
+    </section>
 
-    <footer>
-      <p>© <span id="year"></span> Shai Quetzalli Angeles Cañas</p>
-    </footer>
+    <section id="portafolio">
+      <h3>Portafolio</h3>
+      <p>Aquí se cargara la informacion de mis proyectos. </p>
+    </section>
 
-    <!-- JS -->
+    <section id="servicios">
+      <h3>Servicios</h3>
+      <p>Sección destinada a en un futuro ofrecer mis servicios en enfermeria, asesoramiento en al manejo de datos, análisis de datos y trabajos como enfermera. </p>
+    </section>
+
+    <section id="blog">
+      <h3>Blog</h3>
+      <p> Sección dedicada a compartir mis experiencias y aprendizajes. </p>
+    </section>
+
+    <section id="contacto">
+      <h3>Contacto</h3>
+      <p>Puedes contactarme a través de mi correo electrónico y redes sociales</p>
+    </section>
+
+    <section id="pruebas">
+      <h3>Sección de pruebas</h3>
+       <p> lorem ipsum </p>
+    </section>
+  </main>
+
+  <aside> 
+    <p> Página en proceso </p> 
+  </aside>
+
+  <footer>
+    <p>© <span id="year"></span> Shai Quetzalli Ángeles Cañas</p>
+  </footer>
+
+          <!-- JS -->
     <script src="scripts.js"></script>
-  </body>
+</body>
 </html>

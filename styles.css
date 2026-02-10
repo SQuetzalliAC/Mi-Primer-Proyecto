@@ -1,80 +1,293 @@
-/* =========================
-   CSS BASE (para empezar)
-   ========================= */
+/* Variables de color separadas por tonos y usos */
 
-/* 1) Tokens (variables): cambias aquí y se refleja en todo */
-:root{
-  --ink:#0f172a;
-  --muted:#475569;
-  --bg:#ffffff;
-  --paper:#f8fafc;
-  --border:#e2e8f0;
-  --accent:#2EC4B6;     /* Verde agua vivo */
-  --accent-2:#1E5B4F;   /* Verde iris profundo */
-  --radius:18px;
+:root {
+  /* Identidad */
+  --c-gris-carbon-frio: #1F2328;       /* (--border) Texto principal / contraste alto */
+  --c-gris-frio-estructural: #3A4348; /* (--muted) UI fuerte / encabezados secundarios */
+  --c-azul-gris-profundo: #2E4A56;    /* (--accent) Títulos principales / secciones clave */
+  --c-azul-gris-medio: #5F7F8A;        /* Cards, divisores, fondos intermedios */
+  --c-gris-claro-frio: #E8ECEF;       /* (--bg) Fondo base / descanso visual */
+  --c-verde-agua-integrado: #7FBEC0;  /* Links, hover, iconos importantes */
+  --c-verde-agua-claro: #BFE3E2;       /* (--paper)  Detalles mínimos / micro-feedback */
+  
+  /*Ojo Girasol*/
+  --c-girasol-ambar: #F2C94C;          /* Acentos pequeños, hover, íconos activos */
+  --c-nucleo-dorado: #E6B84E;          /* (accent 2) Micro-acentos, líneas finas, indicadores */
+  --c-verde-agua-vivo: #2EC4B6;        /* Botones secundarios, links suaves */
+  --c-verde-iris-profundo: #1E5B4F;    /* (--ink) Botones principales, títulos clave */
+  --c-verde-grisaceo: #6F8F8B;         /* Fondos alternos, tarjetas */
+  --c-gris-piel-claro: #F4F6F8;        /* Fondos amplios de contenido */
+
+  /* Variantes*/
+  --c-lila-rosa: #B48EFD;               /* Badges, tags, detalles gráficos */
+  --c-mauve-profundo: #A5629C;          /* Palabras clave, acentos finos */
+  --c-rosa-malva-apagado: #AF8990;      /* Subtítulos emocionales */
+  --c-rosa-empolvado: #C49A97;          /* Fondos suaves, hover/focus */
+  --c-lila-claro-etereo: #ECD0F9;       /* Cards suaves, citas, separadores */
+
+ /* Variables de tipografía y estilos */ 
+
+  /* Font families */
+  --ff-acento: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ff-titulo: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ff-texto: "Questrial", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Pesos (ajusta según lo que cargues de Google Fonts) */
+  --fw-texto: 400;
+  --fw-notas: 300;
+
+  --fw-h1: 900;
+  --fw-h2: 800;
+  --fw-h3: 700;
+  --fw-h4: 600;
+  --fw-h5: 500;
+  --fw-h6: 500;
+
+  --fw-acento: 500;
+
+  /* Tamaños (fluido y moderno) */
+  --fs-h1: 36px;
+  --fs-h2: 30px;
+  --fs-h3: 24px;
+  --fs-h4: 22px;
+  --fs-h5: 20px;
+  --fs-h6: 18px;
+
+  --fs-texto: 16px;
+  --fs-notas: 15px;
+
+  /* Layout tokens (globales) JCDLCE */
+  --container-max: 1100px;
+  --container-pad: 18px;
+
   --container: 980px;
+
+  --radius: 14px;
+  --radius-pill: 999px;
+
+  --t-fast:0.15s;
+  --t-med:0.3s;
+  --focus-ring: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
-/* 2) Reset básico y box sizing */
-*{ box-sizing:border-box; }
-html, body{ height:100%; }
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Inter, Manrope, Space Grotesk, Questrial, sans-serif;
-  color:var(--ink);
-  background:var(--paper);
-  line-height:1.6;
+/* Breakpoints tipográficos (Tablet / Móvil) JCDLCE
+   Basado en tu tabla final:
+   - Tablet: H1 32, H2 26, H3 22, H4 20, H5 18, H6 16, Texto 15, Notas 14
+   - Móvil:  H1 28, H2 24, H3 20, H4 18, H5 16, H6 15, Texto 14, Notas 13 */
+
+@media (max-width: 1023px) {
+    :root {
+      --fs-h1: 32px;
+    --fs-h2: 26px;
+    --fs-h3: 22px;
+    --fs-h4: 20px;
+    --fs-h5: 18px;
+    --fs-h6: 16px;
+
+    --fs-texto: 15px;
+    --fs-notas: 14px;
+  }
 }
 
-/* 3) Tipografía: espaciado y jerarquía mínima */
-h1, h2, h3{ line-height:1.15; margin: 0 0 10px; }
-p{ margin: 0 0 14px; color: var(--muted); }
+@media (max-width: 767px) {
+  :root {
+    --fs-h1: 28px;
+    --fs-h2: 24px;
+    --fs-h3: 20px;
+    --fs-h4: 18px;
+    --fs-h5: 16px;
+    --fs-h6: 15px;
 
-/* 4) Contenedor: centra el contenido y da padding lateral */
+    --fs-texto: 14px;
+    --fs-notas: 13px;
+  }
+}
+
+
+/* Reset base + comportamiento de texto JCDLCE */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+/* HEADER (Grid 15/60/25) SQAC */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%; 
+  background: var(--c-verde-agua-integrado); /* El color ahora sí llena todo */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil para ver el sticky */
+}
+
+.header-top{
+  max-width: 980px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 15% 60% 25%;
+  align-items: center;
+  height: 92px;              /* calibrado para tu contenedor */
+  padding: 0 24px;
+  gap: 12px;
+  margin:0 auto;
+  background: var(--c-verde-agua-integrado); /* El color ahora sí llena todo */
+}
+
+/* Logo / marca */
+.brand-mark{
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid var(--c-gris-carbon-frio);
+  background: var(--c-gris-claro-frio);
+  text-decoration: none;
+}
+
+.sunflower{
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+/* Identidad (centro) */
+.identity{
+  display: grid;
+  gap: 4px;
+}
+
+.identity .name{
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-azul-gris-profundo);
+  font-family: var(--ff-titulo);
+}
+
+.identity .role{
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--c-gris-frio-estructural);
+  line-height: 1.4;
+}
+
+/* Acciones (derecha) */
+.actions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Nav */
+.header-nav{
+  margin-top: 12px;
+  padding: 12px 0;
+  max-width: 100%;
+  margin:0 auto;
+  background: var(--c-verde-agua-claro); /* El color ahora sí llena todo */
+}
+
+.header-nav nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .header-top{
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .brand-mark{
+    margin: 0 auto;
+  }
+
+  .actions{
+    display: none;
+  }
+
+  .header-nav nav{
+    justify-content: center;
+  }
+}
+
+/* CSS BASE (para empezar) JCDLCE */
+
+/* Reset básico y box sizing */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--ff-texto);
+  color: var(--c-verde-iris-profundo);
+  background: var(--c-gris-claro-frio);
+  line-height: 1.6;
+}
+
+/* Contenedor: centra el contenido y da padding lateral */
+
 .container{
   width:min(var(--container), 92vw);
   margin:0 auto;
   padding:24px 0;
 }
 
-/* 5) Layout simple (para que el sitio se sienta ordenado) */
-header, main, aside, footer{
+/* Layout simple (para que el sitio se sienta ordenado) */
+
+main, aside, footer{
   width:min(var(--container), 92vw);
   margin:0 auto;
 }
 
-header{
-  padding:18px 0;
-}
-
-/* 6) Navegación básica */
+/* Navegación básica */
 nav a{
-  color:var(--accent);
+  color:var(--c-nucleo-dorado);
   text-decoration:none;
   font-weight:700;
-  margin-right:12px;
+  margin-right:12px;;
 }
+
 nav a:hover{
   text-decoration:underline;
 }
 
-/* 7) Secciones con aire */
+/* Secciones con aire */
 section{
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--c-gris-claro-frio);
+  border: 1px solid var(--c-gris-carbon-frio);
   border-radius: var(--radius);
   padding: 18px;
   margin: 16px auto;
   width:min(var(--container), 92vw);
 }
 
-/* 8) Footer */
+/* Footer */
 footer{
   padding: 18px 0 28px;
-  color: var(--muted);
+  color: var(--c-gris-frio-estructural);
 }
 
-/* 9) Responsive rápido */
+/* Responsive rápido */
 @media (max-width: 720px){
   nav{
     display:flex;
@@ -82,4 +295,142 @@ footer{
     gap:10px;
   }
   section{ padding: 14px; }
+}
+
+h1{
+  font-family: var(--ff-titulo);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  color: var(--c-mauve-profundo)
+}
+
+h2 {
+  font-family: var(--ff-acento);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+  color: var(--c-azul-gris-profundo);
+}
+
+.hero-content { 
+  background-color: var(--c-verde-agua-claro); 
+}
+
+/* BOTONES */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.78rem 1.05rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-azul-gris-medio);
+
+  font-family: var(--ff-texto);
+  font-weight: 600;
+  font-size: 0.95em;
+  line-height: 1;
+
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+
+  transition:
+    transform var(--t-fast),
+    background-color var(--t-med),
+    border-color var(--t-med),
+    color var(--t-med),
+    box-shadow var(--t-med);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* =========================
+   HEADER — ARMONIZADO (PATCH)
+   Mantiene tu layout (Grid 15/60/25)
+   ========================= */
+
+/* Tokens que hoy solo existen en @media (evita undefined) */
+:root{
+  --t-fast: 0.15s;
+  --t-med: 0.3s;
+
+  /* Focus ring alineado a tu paleta (no azul default) */
+  --focus-ring: 0 0 0 3px rgba(46, 196, 182, 0.35); /* --c-verde-agua-vivo */
+}
+
+/* El header NO debe ser el acento saturado; debe “enmarcar” la identidad */
+header{
+  background: var(--c-gris-piel-claro);
+  border-bottom: 1px solid rgba(31, 35, 40, 0.10);
+  box-shadow: 0 10px 24px rgba(31, 35, 40, 0.06);
+}
+
+/* Top: limpio y sobrio para que el girasol destaque */
+.header-top{
+  background: var(--c-gris-piel-claro);
+}
+
+/* Nav: una banda ligeramente distinta, pero neutra */
+.header-nav{
+  background: var(--c-gris-claro-frio);
+  border-top: 1px solid rgba(31, 35, 40, 0.08);
+}
+
+/* Nombre/rol: coherente con tu sistema */
+.identity .name{
+  color: var(--c-gris-carbon-frio);     /* más legible que azul-gris aquí */
+}
+
+.identity .role{
+  color: rgba(31, 35, 40, 0.72);        /* muted */
+}
+
+/* IMPORTANTE: tu regla global "nav a { color: dorado }" está afectando el header.
+   Aquí “encapsulamos” el nav del header para que no herede ese dorado. */
+.header-nav nav a{
+  color: rgba(31, 35, 40, 0.78);
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 12px;
+  transition: background-color var(--t-med), color var(--t-med), transform var(--t-fast);
+  text-decoration: none;
+}
+
+.header-nav nav a:hover{
+  background: rgba(127, 190, 192, 0.22); /* --c-verde-agua-integrado con transparencia */
+  color: var(--c-verde-iris-profundo);
+}
+
+.header-nav nav a:focus-visible{
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Si luego marcas el link activo con .is-active */
+.header-nav nav a.is-active{
+  background: rgba(242, 201, 76, 0.26); /* --c-girasol-ambar */
+  color: var(--c-gris-carbon-frio);
+  font-weight: 800;
+}
+
+/* Botón primario: usa tu verde iris profundo (es tu “acción”) */
+.btn.btn--primary{
+  background: var(--c-verde-iris-profundo);
+  border-color: rgba(31, 35, 40, 0.10);
+  color: #fff;
+  box-shadow: 0 12px 22px rgba(31, 35, 40, 0.14);
+}
+
+.btn.btn--primary:hover{
+  background: var(--c-verde-agua-vivo);
+  transform: translateY(-1px);
+}
+
+.btn.btn--primary:active{
+  transform: translateY(0);
 }
