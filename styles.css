@@ -114,14 +114,18 @@ html {
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;  
+  scroll-padding-top: 90px;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
 }
 
 /* HEADER (Grid 15/60/25) SQAC */
 
 header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
   width: 100%; 
   background: var(--c-verde-agua-integrado); /* El color ahora sí llena todo */
@@ -129,6 +133,7 @@ header {
 }
 
 .header-top{
+  position: relative;
   max-width: 980px;
   justify-content: center;
   display: grid;
@@ -191,11 +196,15 @@ header {
 
 /* Nav */
 .header-nav{
+  position: sticky;
+  top: 0;
+  z-index: 1100;
   margin-top: 12px;
   padding: 12px 0;
   max-width: 100%;
   margin:0 auto;
   background: var(--c-verde-agua-claro); /* El color ahora sí llena todo */
+  border-top: 1px solid rgba(31, 35, 40, 0.08);
 }
 
 .header-nav nav{
