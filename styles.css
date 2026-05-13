@@ -203,15 +203,80 @@ main, footer {
   margin: 0 auto;
 }
 
+/* --- Estilo base compartido para secciones --- */
 section {
-  background: white; /* O var(--c-gris-piel-claro) si prefieres un tono gris suave */
   border: 1px solid rgba(31, 35, 40, 0.08);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 32px;
   margin: 20px auto;
+  transition: background-color var(--t-med);
 }
 
-.hero-content { background-color: var(--c-verde-agua-claro); }
+/* --- Distribución cromática de secciones --- */
+
+/* Hero / Inicio */
+.hero-content {
+  background: linear-gradient(
+    135deg,
+    var(--c-verde-agua-claro) 0%,
+    #ffffff 100%
+  );
+}
+
+/* Sobre mí */
+#sobre-mi {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    rgba(95, 127, 138, 0.10) 100%
+  );
+}
+
+/* Portafolio */
+#portafolio {
+  background: linear-gradient(
+    135deg,
+    rgba(95, 127, 138, 0.10) 0%,
+    var(--c-gris-piel-claro) 100%
+  );
+}
+
+/* Servicios */
+#servicios {
+  background: linear-gradient(
+    135deg,
+    var(--c-gris-piel-claro) 0%,
+    rgba(191, 227, 226, 0.35) 100%
+  );
+}
+
+/* Blog */
+#blog {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 227, 226, 0.35) 0%,
+    #ffffff 100%
+  );
+}
+
+/* Contacto */
+#contacto {
+  background: linear-gradient(
+    135deg,
+    var(--c-verde-iris-profundo) 0%,
+    var(--c-azul-gris-profundo) 100%
+  );
+  color: #ffffff;
+}
+
+/* Ajustes internos sección contacto */
+#contacto h3,
+#contacto p,
+#contacto a,
+#contacto span {
+  color: #ffffff;
+}
+
 .hero-content {
   display: flex;
   align-items: center;
@@ -242,6 +307,63 @@ section {
 h1 { font-family: var(--ff-titulo); font-size: var(--fs-h1); font-weight: var(--fw-h1); color: var(--c-mauve-profundo); }
 h2 { font-family: var(--ff-acento); font-size: var(--fs-h2); font-weight: var(--fw-h2); color: var(--c-azul-gris-profundo); }
 
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-img {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(31, 35, 40, 0.12);
+}
+
+/* ==========================================================================
+   BLOG
+   ========================================================================== */
+
+.blog-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.blog-text {
+  flex: 1;
+}
+
+.blog-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.blog-image {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 24px rgba(31, 35, 40, 0.10);
+}
+
 footer {
   padding: 40px 0;
   text-align: center;
@@ -271,4 +393,23 @@ footer {
   .hero-image {
     width: 240px;
   }
+
+  .about-section {
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-img {
+  width: 220px;
+}
+
+.blog-section {
+  flex-direction: column;
+  text-align: center;
+}
+
+.blog-image {
+  width: 220px;
+}
+
 }
