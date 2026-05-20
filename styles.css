@@ -137,17 +137,34 @@ header {
   padding: 12px 0;
 }
 
-.header-nav nav {
+.nav-inner {
   max-width: var(--container);
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: center;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
   align-items: center;
+  gap: 16px;
 }
 
-.header-nav nav a {
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--c-verde-iris-profundo);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-menu a {
   text-decoration: none;
   color: rgba(31, 35, 40, 0.78);
   font-weight: 700;
@@ -156,12 +173,12 @@ header {
   transition: all var(--t-med);
 }
 
-.header-nav nav a:hover {
+.nav-menu a:hover {
   background: rgba(127, 190, 192, 0.22);
   color: var(--c-verde-iris-profundo);
 }
 
-.header-nav nav a.is-active {
+.nav-menu a.is-active {
   background: rgba(242, 201, 76, 0.26);
   color: var(--c-gris-carbon-frio);
 }
@@ -382,8 +399,7 @@ footer {
     text-align: center;
   }
   .brand-mark { margin: 0 auto; }
-  .header-nav nav { gap: 10px; }
-  .nav-cta { display: none; } /* Oculta botón en nav móvil para no saturar */
+  .nav-cta { display:  inline-flex; } 
 
     .hero-content {
     flex-direction: column;
@@ -411,5 +427,49 @@ footer {
 .blog-image {
   width: 220px;
 }
+
+  .nav-inner {
+    grid-template-columns: auto 1fr;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-cta {
+    justify-self: end;
+    display: inline-flex;
+  }
+
+  .nav-menu {
+    display: none;
+
+    position: absolute;
+    top: 58px;
+    left: 16px;
+    right: 16px;
+    z-index: 1200;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+
+    padding: 16px;
+    border-radius: var(--radius);
+    background: var(--c-gris-piel-claro);
+    box-shadow: 0 12px 30px rgba(31, 35, 40, 0.14);
+    border: 1px solid rgba(31, 35, 40, 0.08);
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-menu a {
+    text-align: center;
+  }
 
 }
